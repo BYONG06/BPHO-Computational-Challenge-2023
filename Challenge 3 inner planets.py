@@ -48,15 +48,12 @@ def TYPE(PLANET, color):
     planet.color(color)
 
     for i in range(1,1001):
-
         x = PLANET[i][0]
         y = PLANET[i][1]
-
         planet.goto(x*100, y*100)
         planet.pendown()
 
     planet.goto(PLANET[1][0]*100, PLANET[1][1]*100)
-
     planet.hideturtle()
     #planet._update()
 
@@ -64,3 +61,15 @@ TYPE(mercuryxy, "blue")
 TYPE(venusxy, "orange")
 TYPE(earthxy, "red")
 TYPE(marsxy, "green")
+
+def label(x, y, color, name):
+    planet.penup()
+    planet.goto(x, y)
+    planet.color(color)
+    planet.write(name)
+
+label(250, 210, "black", "Key")
+label(250, 200, "red", "-- Mercury")
+label(250, 190, "orange", "-- Venus")
+label(250, 180, "purple", "-- Earth")
+label(250, 170, "green", "-- Mars")
