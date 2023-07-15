@@ -27,6 +27,11 @@ for i in range (-200, 250, 50):
     axes.pu()
     axes.goto(i, -20)
     axes.write(str(i/100))
+axes.goto(225, 0)
+axes.write("x/AU")
+axes.goto(0, 225)
+axes.write("y/AU")
+axes._update()
 axes._update()
 
 planet=turtle.Turtle()
