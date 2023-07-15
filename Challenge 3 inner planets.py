@@ -32,7 +32,6 @@ axes.write("x/AU")
 axes.goto(0, 225)
 axes.write("y/AU")
 axes._update()
-axes._update()
 
 planet=turtle.Turtle()
 planet._tracer(False)
