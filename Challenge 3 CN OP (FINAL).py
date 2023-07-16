@@ -138,9 +138,13 @@ def ORBIT(PLANETDATA, color, PLANET):
     x = PLANETDATA[i][0]
     y = PLANETDATA[i][1]
 
-    PLANET.goto(x*10, y*10)    
+    PLANET.goto(x*10, y*10)
 
-for i in range(2,379):
+FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
+while (not 1<=FR) and (not FR<=20):
+    FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
+
+for i in range(2,379, FR):
 
     ORBIT(jupiterP, "red", jupiter)
     ORBIT(saturnP, "orange", saturn)
