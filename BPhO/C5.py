@@ -61,9 +61,7 @@ CuranusxCoords=gencoords2(yCoords, 84.747)
 CneptunexCoords=gencoords2(yCoords, 166.344)
 CplutoxCoords=gencoords2(yCoords, 248.348)
 
- 
-fig = plt.figure(figsize = (12, 7))
-
+fig = plt.figure("Challenge 5")
 
 def plot(planetE, planetC, NAME):
     plt.plot(planetE, yCoords, alpha = 0.4,
@@ -114,6 +112,16 @@ elif selection == 8:
 elif selection == 9:
     plot(plutoxCoords, CplutoxCoords, "Pluto")
 
- 
+DATA = ["P = 0.241, Σ = 0.21, θ_0 = 0",
+        "P = 0.615, Σ = 0.01, θ_0 = 0",
+        "P = 0.1, Σ = 0.02, θ_0 = 0",
+        "P = 1.881, Σ = 0.09, θ_0 = 0",
+        "P = 11.861, Σ = 0.05, θ_0 = 0",
+        "P = 29.628, Σ = 0.06, θ_0 = 0",
+        "P = 84.747, Σ = 0.05, θ_0 = 0",
+        "P = 166.344, Σ = 0.01, θ_0 = 0",
+        "P = 248.348, Σ = 0.25, θ_0 = 0",]
+
+plt.text(8, 15, DATA[selection-1], fontsize = 10, bbox = dict(facecolor = 'red', alpha = 0.5))
 plt.legend(["Elipse  Σ = 0.21", "Circular Σ = 0"], loc = "upper left")
 plt.show()

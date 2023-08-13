@@ -5,8 +5,9 @@ from tabulate import tabulate
 
 planet = turtle.Turtle()
 planet.speed(10)
-planet.pu()
 planet.ht()
+planet.pu()
+planet._tracer(False)
 planet.goto(-100, 200)
 planet.write("Inner Planets", font=("Courier", 15, "bold"), align = "center")
 
@@ -42,7 +43,7 @@ from openpyxl import load_workbook
 #you should already have this if you have pandas installed
 
 
-workbook = load_workbook(filename="challenge 1 initial.xlsx") #change to book name
+workbook = load_workbook(filename="Challenge 1 initial.xlsx") #change to book name
 workbook.active = workbook["Challenge 4"] #change to sheet name
 sheet=workbook.active
 print ("Rotation configuration - refer to table for full details of inputs.")
@@ -68,13 +69,11 @@ Q2= sheet["C44"].value
 R1= sheet["C45"].value
 R2= sheet ["C46"].value
 
-mercuryP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 4", usecols ="P,Q").to_numpy()
-venusP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 4", usecols ="AA,AB").to_numpy()
-earthP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 4", usecols ="AL,AM").to_numpy()
-marsP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 4", usecols ="AW, AX").to_numpy()
-
+mercuryP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 7.2", usecols ="P,Q").to_numpy()
+venusP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 7.2", usecols ="AA,AB").to_numpy()
+earthP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 7.2", usecols ="AL,AM").to_numpy()
+marsP = pandas.read_excel("Challenge 1 initial.xlsx", sheet_name="Challenge 7.2", usecols ="AW, AX").to_numpy()
 #and this bit remains unchanged from previous code I sent you
-planet._tracer(False) 
 
 axes=turtle.Turtle()
 axes.ht()
@@ -123,27 +122,43 @@ label(250, 190, "orange", "-- Venus")
 label(250, 180, "purple", "-- Earth")
 label(250, 170, "green", "-- Mars")
 
-def POSITION(PLANET, PLANETDATA):
+planets = ["0 Mercury", "1 Venus", "2 Earth", "3 Mars"]
+for i in planets:
+    print(i)
+centre = int(input("Select the centre planet (0 to 3): "))
+if centre == 0:
+    MAIN = mercuryP
+elif centre == 1:
+    MAIN = venusP
+elif centre == 2:
+    MAIN = earthP
+elif centre == 3:
+    MAIN = marsP
+
+def POSITION(PLANET, PLANETDATA, MAIN):
     PLANET.pu()
     
-    x = PLANETDATA[1][0]
-    y = PLANETDATA[1][1]
+    x = PLANETDATA[1][0] - MAIN[1][0]
+    y = PLANETDATA[1][1] - MAIN[1][1]
 
     PLANET.goto(x*100, y*100)
     PLANET.pd()
 
-POSITION(mercury, mercuryP)
-POSITION(venus, venusP)
-POSITION(earth, earthP)
-POSITION(mars, marsP)
+POSITION(mercury, mercuryP, MAIN)
+POSITION(venus, venusP, MAIN)
+POSITION(earth, earthP, MAIN)
+POSITION(mars, marsP, MAIN)
 
+'''
 def ORBIT(PLANETDATA, color, PLANET):
     PLANET.color(color)
     
     x = PLANETDATA[i][0]
     y = PLANETDATA[i][1]
 
-    PLANET.goto(x*100, y*100)   
+    PLANET.goto(x*100, y*100)
+
+planet._tracer(False)    
 
 for i in range(1, 379):
 
@@ -154,28 +169,28 @@ for i in range(1, 379):
 
 planet._update()
 planet._tracer(True)
+'''
 
-mercury.pu()
-venus.pu()
-earth.pu()
-mars.pu()
-
-def PLANET(PLANETDATA, color, PLANET):
+def PLANET(PLANETDATA, color, PLANET, MAIN):
     PLANET.color(color)
 
-    x = PLANETDATA[i][0]
-    y = PLANETDATA[i][1]
+    x = PLANETDATA[i][0] - MAIN[i][0]
+    y = PLANETDATA[i][1] - MAIN[i][1]
 
     PLANET.goto(x*100, y*100)
-
     
-FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-while (not 1<=FR) and (not FR<=20):
-    FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
 
-for i in range(1, 379, FR):
+for i in range(2, 1200):
 
-    PLANET(mercuryP, "red", mercury)
-    PLANET(venusP, "orange", venus)
-    PLANET(earthP, "purple", earth)
-    PLANET(marsP, "green", mars)
+    PLANET(mercuryP, "red", mercury, MAIN)
+    PLANET(venusP, "orange", venus, MAIN)
+    PLANET(earthP, "purple", earth, MAIN)
+    PLANET(marsP, "green", mars, MAIN)
+
+mercury.ht()
+venus.ht()
+earth.ht()
+mars.ht()
+
+planet._update()
+planet._tracer(True)
