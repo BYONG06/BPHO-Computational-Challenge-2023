@@ -1,4 +1,4 @@
-class c3IP():
+def c3IP(speed):
     import pandas
     import turtle
     import numpy
@@ -129,12 +129,7 @@ class c3IP():
         y = PLANETDATA[i][1]
 
         PLANET.goto(x*100, y*100)
-
-    FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-    while (not 1<=FR) and (not FR<=20):
-        FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-
-    for i in range(1,379, FR):
+    for i in range(1,379, speed):
 
         ORBIT(mercuryP, "red", mercury)
         ORBIT(venusP, "orange", venus)
