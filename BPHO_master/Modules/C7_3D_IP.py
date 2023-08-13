@@ -1,4 +1,4 @@
-class IP72():
+def IP72(viewpoint, chosen):
     from openpyxl import load_workbook
     import pandas
     import turtle
@@ -43,10 +43,8 @@ class IP72():
     workbook = load_workbook(filename="Challenge 1 initial.xlsx") #change to book name
     workbook.active = workbook["Challenge 4"] #change to sheet name
     sheet=workbook.active
-    print ("Rotation configuration - refer to table for full details of inputs.")
-    print ("Typical input: P1/P2 = -0.35, Q1/R2=1, Q2/R1=0")
 
-    type = int(input("Select a view type using the index numbers on the table: "))
+    type = viewpoint
 
     #Go straight to asking for inputs for P1/P2/Q1/Q2/R1/R2
     #I can make it so that it prints current settings and asks if you want
@@ -119,10 +117,7 @@ class IP72():
     label(250, 180, "purple", "-- Earth")
     label(250, 170, "green", "-- Mars")
 
-    planets = ["0 Mercury", "1 Venus", "2 Earth", "3 Mars"]
-    for i in planets:
-        print(i)
-    centre = int(input("Select the centre planet (0 to 3): "))
+    centre = chosen
     if centre == 0:
         MAIN = mercuryP
     elif centre == 1:
