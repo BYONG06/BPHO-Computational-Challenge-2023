@@ -1,4 +1,4 @@
-class c4OP():
+def c4OP(speed,viewtype):
     import numpy as np
     import pandas
     import turtle
@@ -46,10 +46,8 @@ class c4OP():
     workbook = load_workbook(filename="challenge 1 initial.xlsx") #change to book name
     workbook.active = workbook["Challenge 4"] #change to sheet name
     sheet=workbook.active
-    print ("Rotation configuration - refer to table for full details of inputs.")
-    print ("Typical input: P1/P2 = -0.35, Q1/R2=1, Q2/R1=0")
 
-    type = int(input("Select a view type using the index numbers on the table: "))
+    type = viewtype
 
     #Go straight to asking for inputs for P1/P2/Q1/Q2/R1/R2
     #I can make it so that it prints current settings and asks if you want
@@ -169,12 +167,8 @@ class c4OP():
 
         PLANET.goto(x*10, y*10)
 
-        
-    FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-    while (not 1<=FR) and (not FR<=20):
-        FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
 
-    for i in range(1, 379, FR):
+    for i in range(1, 379, speed):
 
         PLANET(jupiterP, "red", jupiter)
         PLANET(saturnP, "orange", saturn)
