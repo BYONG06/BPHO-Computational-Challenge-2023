@@ -1,4 +1,4 @@
-class c3OP():
+def c3OP(speed):
     import pandas
     import turtle
     import numpy
@@ -140,11 +140,7 @@ class c3OP():
 
         PLANET.goto(x*10, y*10)
 
-    FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-    while (not 1<=FR) and (not FR<=20):
-        FR = int(input("Input the speed of the orbiting planets (1 to 20): "))
-
-    for i in range(2,379, FR):
+    for i in range(2,379, speed):
 
         ORBIT(jupiterP, "red", jupiter)
         ORBIT(saturnP, "orange", saturn)
