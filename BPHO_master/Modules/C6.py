@@ -1,4 +1,5 @@
-class Challenge6():
+def Challenge6(settings, scale):
+    print (settings)
     import turtle
     import math
     import pandas
@@ -36,7 +37,69 @@ class Challenge6():
                 break
         planet._update()
         planet._tracer(True)
+        
+    counter=0
+    index=0
+    if settings [0]==1:
+        a1=mercuryxy
+        counter=counter+1
+    if settings [1]==1:
+        if counter==0:
+            a1=venusxy
+            counter=counter+1
+        elif counter==1:
+            a2=venusxy
+            index=1
+    if settings [2]==1:
+        if counter==0:
+            a1=earthxy
+            counter=counter+1
+        elif counter==1:
+            a2=earthxy
+            index=2
+    if settings [3]==1:
+        if counter==0:
+            a1=marsxy
+            counter=counter+1
+        elif counter==1:
+            a2=marsxy
+            index=3
+    if settings [4]==1:
+        if counter==0:
+            a1=jupiterxy
+            counter=counter+1
+        elif counter==1:
+            a2=jupiterxy
+            index=4
+    if settings [5]==1:
+        if counter==0:
+            a1=saturnxy
+            counter=counter+1
+        elif counter==1:
+            a2=saturnxy
+            index=5
+    if settings [6]==1:
+        if counter==0:
+            a1=uranusxy
+            counter=counter+1
+        elif counter==1:
+            a2=uranusxy
+            index=6
+    if settings [7]==1:
+        if counter==0:
+            a1=neptunexy
+            counter=counter+1
+        elif counter==1:
+            a2=neptunexy
+            index=7
+    if settings [8]==1:
+        if counter==0:
+            a1=plutoxy
+            counter=counter+1
+        elif counter==1:
+            a2=plutoxy
+            index=8
 
 
-    planet(jupiterxy, saturnxy, P[5], 35)
+    planet(a1, a2, P[index]*30, scale)
 
