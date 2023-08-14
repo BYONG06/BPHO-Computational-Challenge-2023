@@ -107,16 +107,13 @@ def OP72(viewpoint,chosen):
         planet.goto(x, y)
         planet.color(color)
         planet.pendown()
-        planet.dot()
-        planet.penup()
-        planet.fd(20)
         planet.write(name)
 
     label(250, 210, "black", "-- Key")
     label(250, 200, "red", "-- Jupiter")
     label(250, 190, "orange", "-- Saturn")
-    label(250, 180, "purple", "-- Uranus")
-    label(250, 170, "green", "-- Neptune")
+    label(250, 180, "green", "-- Uranus")
+    label(250, 170, "purple", "-- Neptune")
 
 
     centre = chosen
