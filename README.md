@@ -1,6 +1,6 @@
 # BPHO-Computational-Challenge-2023
-A set of python and excel-based solutions to the BPhO's 2023 Computational Challenge, with an additional Tkinter GUI.
-Further information about the challenge can be found here: https://www.bpho.org.uk/bpho/computational-challenge/BPhO_CompPhys_Challenge_2023.pdf 
+A set of python and excel-based solutions to the BPhO's 2023 Computational Challenge, with an additional Tkinter GUI.<br>
+Further information about the challenge can be found here: https://www.bpho.org.uk/bpho/computational-challenge/BPhO_CompPhys_Challenge_2023.pdf <br>
 <b> In order for code to run, a spreadsheet of data must be downloaded and placed in the MASTER folder (for the GUI) or the same directory (for individual programs)</b>
 
 # Authors
