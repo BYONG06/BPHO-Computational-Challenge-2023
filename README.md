@@ -1,2 +1,10 @@
 # BPHO-Computational-Challenge-2023
-Uploads in progress.
+A set of python and excel-based solutions to the BPhO's 2023 Computational Challenge, with an additional Tkinter GUI.
+Further information about the challenge can be found here: https://www.bpho.org.uk/bpho/computational-challenge/BPhO_CompPhys_Challenge_2023.pdf 
+<b> In order for code to run, a spreadsheet of data must be downloaded and placed in the MASTER folder (for the GUI) or the same directory (for individual programs)</b>
+
+# Authors
+
+# Known Issues
+With regards to the API:
+- API must be restarted after running turtle-based solutions, due to the termination of the turtle library

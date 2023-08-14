@@ -1,4 +1,4 @@
-class C71():
+def C71():
     import pandas
     import turtle
     import numpy

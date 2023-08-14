@@ -1,3 +1,7 @@
+'''
+DEPRECIATED - But a good reminder of how to call the various functions in .Modules
+'''
+
 import sys
 import os
 import matplotlib.pyplot as graphing
@@ -8,6 +12,7 @@ import numpy
 from tabulate import tabulate
 import math
 import matplotlib.pyplot as plt
+
 
 path = os.path.abspath("Modules")
 sys.path.append(path)
